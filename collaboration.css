@@ -1,0 +1,399 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: grey;
+}
+
+header {
+    background-color: black;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo img {
+    height: 50px;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+label {
+    position: relative;
+}
+
+.toggle {
+    position: absolute;
+    height: 30px;
+    width: 30px;
+    top: 20px;
+    left: 15px;
+    z-index: 1;
+    cursor: pointer;
+    border-radius: 2px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.toggle .common {
+    position: absolute;
+    height: 2px;
+    width: 20px;
+    background-color: black;
+    border-radius: 50px;
+    transition: 0.3s ease;
+}
+
+.toggle .top_line {
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.toggle .middle_line {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.toggle .bottom_line {
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+input {
+    display: none;
+    visibility: none;
+    -webkit-appearance: none;
+}
+
+input:checked ~ .toggle .top_line {
+    left: 2px;
+    top: 14px;
+    width: 25px;
+    transform: rotate(45deg);
+}
+
+input:checked ~ .toggle .bottom_line {
+    left: 2px;
+    top: 14px;
+    width: 25px;
+    transform: rotate(-45deg);
+}
+
+input:checked ~ .toggle .middle_line {
+    opacity: 0;
+    transform: translateX(20px);
+}
+
+.slide {
+    height: 100%;
+    width: 180px;
+    position: fixed;
+    background-color: black;
+    transition: 0.5s ease;
+    transform: translateX(-180px);
+    top: 11%;
+    left: 0;
+    bottom:10%;
+    z-index: 1000;
+    padding-top: 60px;
+}
+
+input:checked ~ .slide {
+    transform: translateX(0);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+.slide h1 {
+    color: white;
+    font-weight: 800;
+    text-align: center;
+    padding: 10px 0;
+    pointer-events: none;
+}
+
+.slide ul {
+    padding: 0;
+}
+
+.slide ul li {
+    list-style: none;
+}
+
+.slide ul li a {
+    color: white;
+    font-weight: 500;
+    padding: 10px 20px;
+    display: block;
+    text-transform: capitalize;
+    text-decoration: none;
+    transition: 0.2s ease-out;
+}
+
+.slide ul li a:hover {
+    background-color: grey;
+}
+
+.slide ul li a i {
+    margin-right: 10px;
+}
+
+main {
+    flex-grow: 1;
+    padding: 20px;
+    margin-left: 200px; /* Adjust this value based on sidebar width */
+    transition: margin-left 0.5s ease;
+}
+
+.content {
+    display: none;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#dashboard {
+    display: block;
+}
+
+.welcome-message {
+    margin-bottom: 20px;
+}
+
+.stats {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.stat {
+    background: #f0f0f0;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    width: 30%;
+}
+
+.recent-activity {
+    margin-bottom: 20px;
+}
+
+.recent-activity ul {
+    list-style: none;
+    padding: 0;
+}
+
+.quick-links {
+    margin-bottom: 20px;
+}
+
+.quick-links button {
+    background: #000;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.quick-links button:hover {
+    background: #333;
+}
+
+.notifications,
+.upcoming-events {
+    margin-bottom: 20px;
+}
+
+.message-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.inbox,
+.sent-messages,
+.compose-message,
+.search-messages {
+    background: #f0f0f0;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.inbox h3,
+.sent-messages h3,
+.compose-message h3,
+.search-messages h3 {
+    margin-bottom: 10px;
+}
+
+.inbox ul,
+.sent-messages ul {
+    list-style: none;
+    padding: 0;
+}
+
+.message-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.subject {
+    margin-top: 5px;
+    font-weight: bold;
+}
+
+.compose-message form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.compose-message form label {
+    font-weight: bold;
+}
+
+.compose-message form input,
+.compose-message form textarea {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.compose-message form button {
+    background: #000;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.compose-message form button:hover {
+    background: #333;
+}
+
+.search-messages input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.project-container,
+.task-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.project-list,
+.task-list {
+    background: #f0f0f0;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.project-list h3,
+.task-list h3 {
+    margin-bottom: 10px;
+}
+
+.project-list ul,
+.task-list ul {
+    list-style: none;
+    padding: 0;
+}
+
+.project-header,
+.task-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.project-description,
+.task-status {
+    margin-top: 5px;
+}
+
+.add-project,
+.add-task {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.add-project h3,
+.add-task h3 {
+    margin-bottom: 15px;
+}
+
+.add-project form,
+.add-task form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.add-project form label,
+.add-task form label {
+    font-weight: bold;
+}
+
+.add-project form input,
+.add-project form textarea,
+.add-project form button,
+.add-task form input,
+.add-task form textarea,
+.add-task form select,
+.add-task form button {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.add-project form button,
+.add-task form button {
+    background: black;
+    color: white;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.add-project form button:hover,
+.add-task form button:hover {
+    background: grey;
+}
