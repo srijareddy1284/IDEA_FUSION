@@ -1,13 +1,19 @@
 
 <?php
-require("register.class.php")
+require("user.class.php")
 ?>
 <?php
 
 if(isset($_POST['submit']))
 {
 
-    $user=new RegisterUser($_POST['username'],$_POST['password'],$_POST['email']);
+    $user=new User($_POST['name'],
+                           $_POST['username'],
+                           $_POST['email'],
+                           $_POST['phone'],
+                           $_POST['bio'],
+                           $_POST['skills'],
+                           $_POST['intrest']);
 
 }
 
@@ -16,14 +22,19 @@ if(isset($_POST['submit']))
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Get form data
+    $name = $_POST['name'];
     $username = $_POST['username'];
-    $password = $_POST['password'];
     $email = $_POST['email'];
+    $phone = $_POST['phone'];
+    $bio = $_POST['bio'];
+    $skills = $_POST['skills'];
+    $intrest = $_POST['intrest'];
+    
 
     // Perform your backend processing (e.g., save to database, validation, etc.)
 
     // If processing is successful, redirect to the desired page
-    header("Location: userdetails.php");
+    header("Location: joinus.html");
     exit(); // Ensure script termination after redirection
 }
 ?>
@@ -49,23 +60,40 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
        
             <div id="a">
                 <div id="b">
-                    <h1>Sign Up </h1>
+                    <h1>User Profile </h1>
 
                 </div>
                 
                 <div id="c">
                     <form method="post" action="" enctype="multipart/form-data" autocomplete="off">
-                        <label for="username">Username:</label>
-                        <input type="text" id="username" name="username" required>
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
 
-                        <label for="password">Password:</label>
-                        <input type="password" id="password" name="password" required>
+                        <label for="username">Username</label>
+                        <input type="username" id="username" name="username" required>
                 
                          <label for="email">Email:</label>
                         <input type="email" id="email" name="email" required>
+
+                        <label for="phone">Phone</label>
+                        <input type="phone" id="phone" name="phone" required>
+
+                        <label for="bio">Bio</label>
+                        <input type="bio" id="bio" name="bio" required>
+
+                        <label for="skils">skills</label>
+                        <input type="skills" id="skills" name="skills" required>
+
+                        <label for="intrest">Intrests</label>
+                        <input type="intrest" id="intrest" name="intrest" required>
+
+                        <label for="project">Projects</label>
+                        <input type="file" id="project" name="project" >
+
+
                         
-                        <a href="userdetails.php">
-                        <input type="submit" value="submit" name="submit">
+                        <a href="joinus.html">
+                        <input type="submit" value="saveprofile" name="submit">
                         </a>
                         <p class="error"><?php echo @$user->error?></p>
                         <p class="success"><?php echo @$user->success?></p>

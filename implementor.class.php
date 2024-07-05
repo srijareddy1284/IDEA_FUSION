@@ -9,7 +9,7 @@ class RegisterUser {
     private $skills;
     private $experience;
     private $availability;
-    private $portfolio;
+    
     private $onlineProfiles;
     private $projectPreferences;
     private $communicationChannels;
@@ -24,14 +24,14 @@ class RegisterUser {
     private $stored_users;
     private $new_user;
 
-    public function __construct($fullName,$email,$phone,$skills,$experience,$availability,$portfolio,$onlineProfiles,$projectPreferences,$communicationChannels,$expectations,$compensation) {
+    public function __construct($fullName,$email,$phone,$skills,$experience,$availability,$onlineProfiles,$projectPreferences,$communicationChannels,$expectations,$compensation) {
         $this->fullName = filter_var(trim($fullName), FILTER_SANITIZE_STRING);
         $this->email = filter_var(trim($email), FILTER_SANITIZE_STRING);
         $this->phone = filter_var(trim($phone), FILTER_SANITIZE_STRING);
         $this->skills = filter_var(trim($skills), FILTER_SANITIZE_STRING);
         $this->experience = filter_var(trim($experience), FILTER_SANITIZE_STRING);
         $this->availability = filter_var(trim($availability), FILTER_SANITIZE_STRING);
-        $this->portfolio = filter_var(trim($portfolio), FILTER_SANITIZE_STRING);
+        
         $this->onlineProfiles = filter_var(trim($onlineProfiles), FILTER_SANITIZE_STRING);
         $this->projectPreferences = filter_var(trim($projectPreferences), FILTER_SANITIZE_STRING);
         $this->communicationChannels = filter_var(trim($communicationChannels), FILTER_SANITIZE_STRING);
@@ -52,7 +52,7 @@ class RegisterUser {
         "skills"                =>$this->skills, 
         "experience"            => $this->experience, 
         "availability"          => $this->availability, 
-        "portfolio"             =>$this->portfolio,
+        
         "onlineProfiles"        =>$this->onlineProfiles,
         "projectPreferences"     =>$this->projectPreferences,
         "communicationChannels" =>$this->communicationChannels,
@@ -73,7 +73,7 @@ class RegisterUser {
             empty($this->skills) ||
             empty($this->experience) ||
             empty($this->availability) ||
-            empty($this->portfolio) ||
+            
             empty($this->onlineProfiles) ||
             empty($this->projectPreferences) ||
             empty($this->communicationChannels) ||

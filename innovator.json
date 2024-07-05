@@ -13,5 +13,15 @@
         "projectName": "farm analytics using iot",
         "projectDescription": "smart farming solutions",
         "skillsNeeded": "iot"
+    },
+    {
+        "projectName": "smart medicine reminder",
+        "projectDescription": "our goal is provide good health to people",
+        "skillsNeeded": "iot"
+    },
+    {
+        "projectName": "smart parking system",
+        "projectDescription": "tells about the number of vacanies in the parking",
+        "skillsNeeded": "iot"
     }
 ]

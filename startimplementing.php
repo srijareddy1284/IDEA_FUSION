@@ -13,7 +13,7 @@ if(isset($_POST['agreement']))
         $_POST['skills'],
         $_POST['experience'],
         $_POST['availability'],
-        $_POST['portfolio'],
+       
         $_POST['onlineProfiles'],
         $_POST['projectPreferences'],
         $_POST['communicationChannels'],
@@ -38,11 +38,10 @@ if(isset($_POST['agreement']))
         <div class="logo">
             <img src="logo.png" alt="Idea Fusion Logo">
             <nav>
-            <a href="index.php">Home</a>
-                <a href="aboutus.php">About Us</a>
-                <a href="joinus.php">Join us</a>
-                <a href="signup.php">Signup</a>
-            <a class="userprofile" href="userprofile.php">U</a>
+                <a href="index.html">Home</a>
+                <a href="aboutus.html">About Us</a>
+                <a href="joinus.html">Join us</a>
+                <a class="userprofile" href="userprofile.html">U</a>
             </nav>
         </div>
     </header>
@@ -73,7 +72,7 @@ if(isset($_POST['agreement']))
                     <input type="text" id="availability" name="availability" required>
 
                     <label for="portfolio">Portfolio:</label>
-                    <input type="text" id="portfolio" name="portfolio">
+                    <input type="file" id="portfolio" name="portfolio">
 
                     <label for="onlineProfiles">Online Profiles:</label>
                     <input type="text" id="onlineProfiles" name="onlineProfiles">

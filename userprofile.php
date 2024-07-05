@@ -1,3 +1,11 @@
+<?php
+$json_data=file_get_contents("user.json");
+$data=json_decode($json_data,true);
+foreach($data as $key=> $value)
+{
+    //echo $value["name"]."<br/>".$value["username"]."<br/>".$value["email"]."<br/>".$value["phone"]."<br/>".$value["bio"]."<br/>".$value["skills"]."<br/>".$value["intrest"]."<br/>";
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,10 +20,10 @@
         <div class="logo">
             <img src="logo.png" alt="Idea Fusion Logo">
             <nav>
-            <a href="index.php">Home</a>
-                <a href="aboutus.php">About Us</a>
-                <a href="joinus.php">Join us</a>
-                <a href="signup.php">Signup</a>
+            <a href="index.html">Home</a>
+                <a href="aboutus.html">About Us</a>
+                <a href="joinus.html">Join us</a>
+                
             <a class="userprofile" href="userprofile.php">U</a>
             </nav>
         </div>
@@ -25,35 +33,31 @@
    
         
         <div class="profile-container">
-            <img src="profile-picture.jpg" alt="Profile Picture" class="profile-picture">
+            
             <div class="profile-info">
               <div>
                 <h2>User Profile</h2>
-                <p><strong>Name:</strong> John Doe</p>
-                <p><strong>Username:</strong> john.doe</p>
-                <p><strong>Email:</strong> john@example.com</p>
-                <p><strong>Phone:</strong> (555) 123-4567</p>
+                <p><strong>Name:</strong> <?php echo $value["name"]?></p>
+                <p><strong>Username:</strong> <?php echo $value["username"]?></p>
+                <p><strong>Email:</strong> <?php echo $value["email"]?></p>
+                <p><strong>Phone:</strong> <?php echo $value["phone"]?></p>
                 <!-- Add more basic information as needed -->
               </div>
               <div>
                 <h2>About Me</h2>
-                <p><strong>Bio:</strong> Passionate about collaboration and innovation.</p>
+                <p><strong>Bio:</strong> <?php echo $value["bio"]?></p>
                 <!-- Add more personal details as needed -->
               </div>
             </div>
             <div class="profile-info">
               <div>
                 <h2>Interests</h2>
-                <p><strong>Skills:</strong> Web Development, UX/UI Design</p>
-                <p><strong>Interests:</strong> Technology, Startups</p>
+                <p><strong>Skills:</strong> <?php echo $value["skills"]?></p>
+                <p><strong>Interests:</strong> <?php echo $value["intrest"]?></p>
                 <!-- Add more preferences and interests as needed -->
               </div>
-              <div>
-                <h2>Projects</h2>
-                <p><strong>Projects Contributed To:</strong> Project A, Project B</p>
-                <p><strong>Role:</strong> Developer</p>
-                <!-- Add more collaboration details as needed -->
-              </div>
+             
+                
             </div>
           </div>
     

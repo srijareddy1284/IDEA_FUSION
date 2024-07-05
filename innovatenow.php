@@ -26,10 +26,10 @@ if(isset($_POST['submit']))
         <div class="logo">
             <img src="logo.png" alt="Idea Fusion Logo">
             <nav>
-            <a href="index.php">Home</a>
-                <a href="aboutus.php">About Us</a>
-                <a href="joinus.php">Join us</a>
-                <a href="signup.php">Signup</a>
+            <a href="index.html">Home</a>
+                <a href="aboutus.html">About Us</a>
+                <a href="joinus.html">Join us</a>
+                
                 <a class="userprofile" href="userprofile.php">U</a>
             </nav>
         </div>
@@ -55,12 +55,26 @@ if(isset($_POST['submit']))
                     <br>
                     <input type="text" id="skillsNeeded" name="skillsNeeded" required>
                     <br>
+                    <label for="projectDuration">Project Duration:</label>
+            <input type="text" id="projectDuration" name="projectDuration" required>
+
+            <label for="budget">Budget:</label>
+            <input type="text" id="budget" name="budget" required>
+
+            
 
                     <button type="submit" name="submit">Submit Idea</button>
 
                     <p class="error"><?php echo @$user->error?></p>
                         <p class="success"><?php echo @$user->success?></p>
                 </form>
+
+                {% for match in matches %}
+        <div class="match">
+            <p><strong>Innovator:</strong> {{ match.innovator.projectName }}</p>
+            <p><strong>Implementor:</strong> {{ match.implementor.fullName }}</p>
+        </div>
+    {% endfor %}
             </div>
         </main>
     </div>
